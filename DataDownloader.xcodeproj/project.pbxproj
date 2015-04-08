@@ -13,6 +13,10 @@
 		3F1641271AB1D5AC002F0665 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1641261AB1D5AC002F0665 /* Images.xcassets */; };
 		3F16412A1AB1D5AC002F0665 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1641281AB1D5AC002F0665 /* LaunchScreen.xib */; };
 		3F1641361AB1D5AC002F0665 /* DataDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1641351AB1D5AC002F0665 /* DataDownloaderTests.swift */; };
+		3F545D8D1AD49816000DF92A /* searchDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F545D8C1AD49816000DF92A /* searchDetailVC.swift */; };
+		3F63F0DE1AD420B1003681D0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F0DD1AD420B1003681D0 /* SwiftyJSON.swift */; };
+		3FDBE5251AD3856800461BA2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDBE5241AD3856800461BA2 /* MapKit.framework */; };
+		3FDBE5291AD386CE00461BA2 /* MusicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDBE5281AD386CE00461BA2 /* MusicEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +33,17 @@
 		3F16411A1AB1D5AC002F0665 /* DataDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F16411E1AB1D5AC002F0665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F16411F1AB1D5AC002F0665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F1641211AB1D5AC002F0665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F1641211AB1D5AC002F0665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = DataDownloader/ViewController.swift; sourceTree = "<group>"; };
 		3F1641241AB1D5AC002F0665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F1641261AB1D5AC002F0665 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3F1641291AB1D5AC002F0665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3F16412F1AB1D5AC002F0665 /* DataDownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataDownloaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1641341AB1D5AC002F0665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1641351AB1D5AC002F0665 /* DataDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloaderTests.swift; sourceTree = "<group>"; };
+		3F545D8C1AD49816000DF92A /* searchDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchDetailVC.swift; sourceTree = "<group>"; };
+		3F63F0DD1AD420B1003681D0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		3FDBE5241AD3856800461BA2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3FDBE5281AD386CE00461BA2 /* MusicEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDBE5251AD3856800461BA2 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +68,7 @@
 		3F1641111AB1D5AC002F0665 = {
 			isa = PBXGroup;
 			children = (
+				3FDBE5241AD3856800461BA2 /* MapKit.framework */,
 				3F16411C1AB1D5AC002F0665 /* DataDownloader */,
 				3F1641321AB1D5AC002F0665 /* DataDownloaderTests */,
 				3F16411B1AB1D5AC002F0665 /* Products */,
@@ -78,7 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				3F16411F1AB1D5AC002F0665 /* AppDelegate.swift */,
-				3F1641211AB1D5AC002F0665 /* ViewController.swift */,
+				3F63F0DC1AD4208D003681D0 /* Library */,
+				3FDBE5271AD386B400461BA2 /* Model */,
+				3FDBE5261AD3867F00461BA2 /* View Controllers */,
 				3F1641231AB1D5AC002F0665 /* Main.storyboard */,
 				3F1641261AB1D5AC002F0665 /* Images.xcassets */,
 				3F1641281AB1D5AC002F0665 /* LaunchScreen.xib */,
@@ -110,6 +122,32 @@
 				3F1641341AB1D5AC002F0665 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F63F0DC1AD4208D003681D0 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3F63F0DD1AD420B1003681D0 /* SwiftyJSON.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		3FDBE5261AD3867F00461BA2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F1641211AB1D5AC002F0665 /* ViewController.swift */,
+				3F545D8C1AD49816000DF92A /* searchDetailVC.swift */,
+			);
+			name = "View Controllers";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3FDBE5271AD386B400461BA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3FDBE5281AD386CE00461BA2 /* MusicEvent.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +199,11 @@
 				TargetAttributes = {
 					3F1641191AB1D5AC002F0665 = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3F16412E1AB1D5AC002F0665 = {
 						CreatedOnToolsVersion = 6.1;
@@ -212,8 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F545D8D1AD49816000DF92A /* searchDetailVC.swift in Sources */,
+				3FDBE5291AD386CE00461BA2 /* MusicEvent.swift in Sources */,
 				3F1641221AB1D5AC002F0665 /* ViewController.swift in Sources */,
 				3F1641201AB1D5AC002F0665 /* AppDelegate.swift in Sources */,
+				3F63F0DE1AD420B1003681D0 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +451,7 @@
 				3F16413B1AB1D5AC002F0665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F16413C1AB1D5AC002F0665 /* Build configuration list for PBXNativeTarget "DataDownloaderTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +460,7 @@
 				3F16413E1AB1D5AC002F0665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
