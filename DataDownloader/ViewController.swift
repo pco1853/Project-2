@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let myLastFMURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getevents&format=json&api_key="
     let myLastFmApiKey = "5657eb0b60719315b09d11096a3eff30"
+    var emptySearchResult:Bool!
     
     override func viewDidLoad()
     {
@@ -26,6 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        emptySearchResult = true
 
     }
 
@@ -57,6 +59,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    //This checks to see if we should go to the detailed cell view
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
+    {
+        //we don't want the user to go to a detailed cell view if their search resulted in nothing
+        if identifier == "searchSegue"
+        {
+            if self.emptySearchResult == true
+            {
+                return false
+            }
+            else
+            {
+                return true
+            }
+        }
+        
+        return true
+    }
 
     //called only when search button is clicked
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
@@ -100,12 +120,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         eventCity = "No city found"
                     }
                     
+                    //getting venue address
+                    var eventAddress:String = e["venue"]["location"]["street"].stringValue
+                    if(eventAddress.isEmpty)
+                    {
+                        eventAddress = "No address found"
+                    }
+                    
+                    //getting venue name
+                    var eventVenue:String = e["venue"]["name"].stringValue
+                    if(eventVenue.isEmpty)
+                    {
+                        eventVenue = "No venue found"
+                    }
+                    
+                    //getting event image
+                    var images = e["image"].arrayValue
+                    var mediumImage = images[2]["#text"].string!
+                    var eventImage:UIImage?
+                    let url = NSURL(string: mediumImage)
+                    if let data = NSData(contentsOfURL: url!)
+                    {
+                        eventImage = UIImage(data: data)
+                    }
+                    
+                    
                     //getting event latitude and longitude (Have to do annoying long cast from string to float value)
                     var eventLat:Float = NSString(string: (e["venue"]["location"]["geo:point"]["geo:lat"].stringValue)).floatValue
                     var eventLong:Float = NSString(string: (e["venue"]["location"]["geo:point"]["geo:long"].stringValue)).floatValue
                     
                     //add each event to our table
-                    var event = MusicEvent(title:eventTitle, latitude: eventLat, longitude: eventLong, city: eventCity)
+                    var event = MusicEvent(title:eventTitle, latitude: eventLat, longitude: eventLong, city: eventCity, venueName: eventVenue, venueAddress: eventAddress, venueImage: eventImage!)
                     self.musicEvents.append(event)
 
                 }
@@ -117,14 +162,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     if(self.musicEvents.count < 2)
                     {
                         self.musicEvents.removeAll(keepCapacity: false)
-                        var event = MusicEvent(title: "No results found", latitude: 0.0, longitude: 0.0, city: "")
+                        var event = MusicEvent(title: "No results found", latitude: 0.0, longitude: 0.0, city: "", venueName: "", venueAddress: "", venueImage: UIImage())
                         self.musicEvents.append(event)
+                        
+                        self.emptySearchResult = true
                         self.tableView.reloadData()
                         
                     }
                     else
                     {
                         //update the UI
+                        self.emptySearchResult = false
                         self.tableView.reloadData()
                     }
                 })

@@ -11,7 +11,6 @@ import UIKit
 class searchDetailVC: UITableViewController {
 
     var selectedEvent:MusicEvent!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,12 +43,13 @@ class searchDetailVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("selectedMusicEvent", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-        cell.textLabel?.text = selectedEvent.getTitle()
-        cell.detailTextLabel?.text = selectedEvent.getCity()
-        return cell
+        let customCell = tableView.dequeueReusableCellWithIdentifier("selectedMusicEvent", forIndexPath: indexPath) as detailViewCell
+ 
+        customCell.cityLabel.text = "City: " + selectedEvent.getCity()
+        customCell.venueLabel.text = "Venue: " + selectedEvent.getVenueName()
+        customCell.venueAddress.text = "Address: " + selectedEvent.getVenueAddress()
+        customCell.eventImage.image = selectedEvent.getVenueImage()
+        return customCell
     }
     
 
