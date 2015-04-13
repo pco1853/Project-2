@@ -47,6 +47,9 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-1c-CWw">
+                                <rect key="frame" x="0.0" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -62,6 +65,7 @@
                     <navigationItem key="navigationItem" id="ttW-fx-eaY"/>
                     <connections>
                         <outlet property="searchBar" destination="1pR-0P-9Zy" id="anQ-KY-0ra"/>
+                        <outlet property="searchIndicator" destination="dfe-1c-CWw" id="22r-tL-yci"/>
                         <outlet property="tableView" destination="wW0-OZ-9L2" id="T2Y-m1-QrN"/>
                     </connections>
                 </viewController>

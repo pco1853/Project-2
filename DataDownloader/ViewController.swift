@@ -10,11 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
+    @IBOutlet weak var searchIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
     var musicEvents = [MusicEvent]()
-    
     let myLastFMURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getevents&format=json&api_key="
     let myLastFmApiKey = "5657eb0b60719315b09d11096a3eff30"
     var emptySearchResult:Bool!
@@ -82,6 +81,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
         self.musicEvents.removeAll(keepCapacity: false)
+        self.tableView.reloadData()
+        
+        self.searchIndicator.frame = CGRectMake(self.view.center.x - 100, self.view.center.y - 100, 200, 200)
+        self.searchIndicator.hidden = false
+        self.searchIndicator.startAnimating()
         
         //get what the user searched and make it URL compatible
         var searchData = searchBar.text
@@ -158,6 +162,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 //all done? call back to the main thread
                 dispatch_async(dispatch_get_main_queue(),
                 {
+                    self.searchIndicator.stopAnimating()
                     //seeing if our search did not result in any data. If so inform the user no results were found
                     if(self.musicEvents.count < 2)
                     {
