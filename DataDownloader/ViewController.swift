@@ -55,6 +55,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("PlainCell", forIndexPath: indexPath) as UITableViewCell
         cell.textLabel?.text = musicEvents[indexPath.row].getTitle()
+        
+        //logic for the populating the subtitle
+        if(musicEvents.count < 2)
+        {
+            cell.detailTextLabel?.text = "No additional info"
+        }
+        else
+        {
+            cell.detailTextLabel?.text = "Tap for more info"
+        }
         return cell
     }
     
@@ -88,9 +98,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return true
     }
 
+   //Will clear whatever is in the table when tapped
+    @IBAction func clearTapped(sender: AnyObject)
+    {
+        musicEvents.removeAll(keepCapacity: false)
+        self.tableView.reloadData()
+    }
+    
     //called only when search button is clicked
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
+        //dismissed keyboard after search is pressed
+        searchBar.resignFirstResponder()
         musicEvents.removeAll(keepCapacity: false)
         self.tableView.reloadData()
         

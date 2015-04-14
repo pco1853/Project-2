@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-//var pathToArchivedFile:String?
 
 var pathToArchivedFile = FilePathInDocumentsDirectory("allConcertEvents.archive")
+
 func DocumentsDirectory() -> String
 {
     return NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as String

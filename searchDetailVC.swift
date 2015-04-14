@@ -46,7 +46,7 @@ class searchDetailVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let customCell = tableView.dequeueReusableCellWithIdentifier("selectedMusicEvent", forIndexPath: indexPath) as detailViewCell
  
-        customCell.cityLabel.text? += selectedEvent.getCity()
+        customCell.cityLabel.text? +=  selectedEvent.getCity()
         customCell.venueLabel.text? += selectedEvent.getVenueName()
         customCell.venueAddress.text? += selectedEvent.getVenueAddress()
         customCell.eventImage.image = selectedEvent.getVenueImage()
