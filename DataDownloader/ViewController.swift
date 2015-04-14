@@ -13,7 +13,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var searchIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    var musicEvents = [MusicEvent]()
+    
+    var testArray = [MusicEvent]()
+    
     let myLastFMURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getevents&format=json&api_key="
     let myLastFmApiKey = "5657eb0b60719315b09d11096a3eff30"
     var emptySearchResult:Bool!
@@ -26,7 +28,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        emptySearchResult = true
+        
+        if(musicEvents.count > 2)
+        {
+            emptySearchResult = false
+        }
+        else
+        {
+            emptySearchResult = true
+        }
+        
 
     }
 
@@ -80,10 +91,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //called only when search button is clicked
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
-        self.musicEvents.removeAll(keepCapacity: false)
+        musicEvents.removeAll(keepCapacity: false)
         self.tableView.reloadData()
         
-        self.searchIndicator.frame = CGRectMake(self.view.center.x - 100, self.view.center.y - 100, 200, 200)
+        self.searchIndicator.center = CGPointMake(self.view.center.x, self.view.center.y)
         self.searchIndicator.hidden = false
         self.searchIndicator.startAnimating()
         
@@ -154,8 +165,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     var eventLong:Float = NSString(string: (e["venue"]["location"]["geo:point"]["geo:long"].stringValue)).floatValue
                     
                     //add each event to our table
-                    var event = MusicEvent(title:eventTitle, latitude: eventLat, longitude: eventLong, city: eventCity, venueName: eventVenue, venueAddress: eventAddress, venueImage: eventImage!)
-                    self.musicEvents.append(event)
+                    var event = MusicEvent(name:eventTitle, lat: eventLat, long: eventLong, venueCity: eventCity, venueName: eventVenue, venueAddress: eventAddress, venueImage: eventImage!)
+                    musicEvents.append(event)
 
                 }
                 
@@ -164,11 +175,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 {
                     self.searchIndicator.stopAnimating()
                     //seeing if our search did not result in any data. If so inform the user no results were found
-                    if(self.musicEvents.count < 2)
+                    if(musicEvents.count < 2)
                     {
-                        self.musicEvents.removeAll(keepCapacity: false)
-                        var event = MusicEvent(title: "No results found", latitude: 0.0, longitude: 0.0, city: "", venueName: "", venueAddress: "", venueImage: UIImage())
-                        self.musicEvents.append(event)
+                        musicEvents.removeAll(keepCapacity: false)
+                        var event = MusicEvent(name: "No results found", lat: 0.0, long: 0.0, venueCity: "", venueName: "", venueAddress: "", venueImage: UIImage())
+                        musicEvents.append(event)
                         
                         self.emptySearchResult = true
                         self.tableView.reloadData()

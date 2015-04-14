@@ -18,6 +18,8 @@
 		3F63F0DE1AD420B1003681D0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F0DD1AD420B1003681D0 /* SwiftyJSON.swift */; };
 		3FDBE5251AD3856800461BA2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDBE5241AD3856800461BA2 /* MapKit.framework */; };
 		3FDBE5291AD386CE00461BA2 /* MusicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDBE5281AD386CE00461BA2 /* MusicEvent.swift */; };
+		96D0BCDD1ADC852800EBFA61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D0BCDC1ADC852800EBFA61 /* MapViewController.swift */; };
+		96D0BCDF1ADC9E4400EBFA61 /* SavingMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D0BCDE1ADC9E4400EBFA61 /* SavingMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		3F63F0DD1AD420B1003681D0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		3FDBE5241AD3856800461BA2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3FDBE5281AD386CE00461BA2 /* MusicEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicEvent.swift; sourceTree = "<group>"; };
+		96D0BCDC1ADC852800EBFA61 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		96D0BCDE1ADC9E4400EBFA61 /* SavingMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				3F16411F1AB1D5AC002F0665 /* AppDelegate.swift */,
+				96D0BCDE1ADC9E4400EBFA61 /* SavingMethods.swift */,
 				3F1FF12B1AD6045200EEF830 /* detailViewCell.swift */,
 				3F63F0DC1AD4208D003681D0 /* Library */,
 				3FDBE5271AD386B400461BA2 /* Model */,
@@ -140,6 +145,7 @@
 			children = (
 				3F1641211AB1D5AC002F0665 /* ViewController.swift */,
 				3F545D8C1AD49816000DF92A /* searchDetailVC.swift */,
+				96D0BCDC1ADC852800EBFA61 /* MapViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ..;
@@ -260,10 +266,12 @@
 			files = (
 				3F545D8D1AD49816000DF92A /* searchDetailVC.swift in Sources */,
 				3FDBE5291AD386CE00461BA2 /* MusicEvent.swift in Sources */,
+				96D0BCDF1ADC9E4400EBFA61 /* SavingMethods.swift in Sources */,
 				3F1641221AB1D5AC002F0665 /* ViewController.swift in Sources */,
 				3F1FF12C1AD6045200EEF830 /* detailViewCell.swift in Sources */,
 				3F1641201AB1D5AC002F0665 /* AppDelegate.swift in Sources */,
 				3F63F0DE1AD420B1003681D0 /* SwiftyJSON.swift in Sources */,
+				96D0BCDD1ADC852800EBFA61 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

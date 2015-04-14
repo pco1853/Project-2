@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class searchDetailVC: UITableViewController {
 
@@ -45,13 +46,25 @@ class searchDetailVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let customCell = tableView.dequeueReusableCellWithIdentifier("selectedMusicEvent", forIndexPath: indexPath) as detailViewCell
  
-        customCell.cityLabel.text = "City: " + selectedEvent.getCity()
-        customCell.venueLabel.text = "Venue: " + selectedEvent.getVenueName()
-        customCell.venueAddress.text = "Address: " + selectedEvent.getVenueAddress()
+        customCell.cityLabel.text? += selectedEvent.getCity()
+        customCell.venueLabel.text? += selectedEvent.getVenueName()
+        customCell.venueAddress.text? += selectedEvent.getVenueAddress()
         customCell.eventImage.image = selectedEvent.getVenueImage()
+        
         return customCell
+        
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailViewToMap"
+        {
+            var mapView = segue.destinationViewController as MapViewController
+            
+            mapView.selectedEventCoordinates = selectedEvent.getCoordinates()
+            mapView.region = MKCoordinateRegionMakeWithDistance(selectedEvent.getCoordinates(), 200000, 200000)
+            mapView.isZoomedInView = true
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

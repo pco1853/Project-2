@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RZ3-gm-vzk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RZ3-gm-vzk">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -77,50 +78,81 @@
         <scene sceneID="nmk-C0-8hc">
             <objects>
                 <tableViewController id="buQ-bA-VQR" customClass="searchDetailVC" customModule="DataDownloader" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="292" sectionHeaderHeight="22" sectionFooterHeight="22" id="eTu-4g-ZYM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="388" sectionHeaderHeight="22" sectionFooterHeight="22" id="eTu-4g-ZYM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectedMusicEvent" rowHeight="292" id="B1y-EP-1vN" customClass="detailViewCell" customModule="DataDownloader" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectedMusicEvent" rowHeight="388" id="B1y-EP-1vN" customClass="detailViewCell" customModule="DataDownloader" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B1y-EP-1vN" id="ZW4-It-nX4">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venue:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dM-e7-PMT">
-                                            <rect key="frame" x="8" y="153" width="323" height="58"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="City:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hic-w0-bWP">
+                                            <rect key="frame" x="8" y="203" width="323" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="323" id="btB-ah-0em"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hic-w0-bWP">
-                                            <rect key="frame" x="8" y="203" width="323" height="41"/>
-                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Concert Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkJ-n1-7dG">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concert Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkJ-n1-7dG">
                                             <rect key="frame" x="8" y="2" width="94" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="94" id="fA6-Qp-VhY"/>
+                                                <constraint firstAttribute="height" constant="28" id="wXZ-7k-icB"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
                                             <color key="textColor" red="0.59052309782608692" green="0.59052309782608692" blue="0.59052309782608692" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFO-co-hhh">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFO-co-hhh">
                                             <rect key="frame" x="8" y="232" width="323" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="DMw-Oy-kmH"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YqR-TA-ZMt">
-                                            <rect key="frame" x="90" y="28" width="145" height="135"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YqR-TA-ZMt">
+                                            <rect key="frame" x="227" y="28" width="145" height="135"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="145" id="5VC-lm-oZq"/>
                                                 <constraint firstAttribute="height" constant="135" id="ak4-ss-v8Q"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oK-PV-I3U">
+                                            <rect key="frame" x="8" y="342" width="95" height="30"/>
+                                            <state key="normal" title="Show on Map">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="TqU-Xe-fAW" kind="show" identifier="detailViewToMap" id="IIG-ng-vll"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Venue:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dM-e7-PMT">
+                                            <rect key="frame" x="8" y="189" width="323" height="22.5"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerX" secondItem="YqR-TA-ZMt" secondAttribute="centerX" id="2G3-al-2Vd"/>
+                                        <constraint firstItem="Hic-w0-bWP" firstAttribute="leading" secondItem="ZW4-It-nX4" secondAttribute="leadingMargin" id="4q3-mg-Usa"/>
+                                        <constraint firstItem="mFO-co-hhh" firstAttribute="top" secondItem="5dM-e7-PMT" secondAttribute="bottom" constant="21" id="BPt-BE-mKL"/>
+                                        <constraint firstItem="Hic-w0-bWP" firstAttribute="leading" secondItem="mFO-co-hhh" secondAttribute="leading" id="DiB-9t-HP9"/>
+                                        <constraint firstItem="Hic-w0-bWP" firstAttribute="top" secondItem="YqR-TA-ZMt" secondAttribute="bottom" constant="40" id="JIl-PJ-aKG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mFO-co-hhh" secondAttribute="bottom" constant="-13.5" id="ROu-Aw-y7U"/>
+                                        <constraint firstItem="Hic-w0-bWP" firstAttribute="leading" secondItem="5dM-e7-PMT" secondAttribute="leading" id="Url-Fq-bek"/>
+                                        <constraint firstItem="Hic-w0-bWP" firstAttribute="trailing" secondItem="5dM-e7-PMT" secondAttribute="trailing" id="YMY-o9-NMd"/>
+                                        <constraint firstItem="YqR-TA-ZMt" firstAttribute="top" secondItem="ZW4-It-nX4" secondAttribute="topMargin" constant="20" id="arY-vJ-4mF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Hic-w0-bWP" secondAttribute="bottom" constant="39.5" id="bJi-Lu-98N"/>
+                                        <constraint firstItem="Hic-w0-bWP" firstAttribute="trailing" secondItem="mFO-co-hhh" secondAttribute="trailing" id="f7t-ms-Opj"/>
+                                        <constraint firstItem="hkJ-n1-7dG" firstAttribute="top" secondItem="ZW4-It-nX4" secondAttribute="topMargin" constant="-6" id="p87-DL-CdO"/>
+                                        <constraint firstItem="Hic-w0-bWP" firstAttribute="leading" secondItem="hkJ-n1-7dG" secondAttribute="leading" id="zrK-lS-fDg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -153,7 +185,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Favorites coming soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-ky-Ehf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites coming soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-ky-Ehf">
                                 <rect key="frame" x="176" y="50" width="249" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="249" id="0gF-gd-yOS"/>
@@ -165,6 +197,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="V5q-ky-Ehf" firstAttribute="top" secondItem="hWP-zb-DDc" secondAttribute="bottom" constant="30" id="521-Lo-P9K"/>
+                            <constraint firstItem="cDG-hp-YbN" firstAttribute="top" secondItem="V5q-ky-Ehf" secondAttribute="bottom" constant="462" id="59u-m9-Jcv"/>
                             <constraint firstItem="V5q-ky-Ehf" firstAttribute="centerX" secondItem="9kB-ke-COk" secondAttribute="centerX" id="hqR-Nq-nqR"/>
                         </constraints>
                     </view>
@@ -186,7 +220,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="About Us Coming Soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cz-sC-9sq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us Coming Soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cz-sC-9sq">
                                 <rect key="frame" x="129" y="49" width="342" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="342" id="nst-Cy-Wj8"/>
@@ -198,7 +232,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5cz-sC-9sq" firstAttribute="top" secondItem="iQc-xp-JoE" secondAttribute="bottom" constant="29" id="LXF-q9-6eV"/>
                             <constraint firstItem="5cz-sC-9sq" firstAttribute="centerX" secondItem="LVK-Gp-NPt" secondAttribute="centerX" id="Nld-DS-nXO"/>
+                            <constraint firstItem="stt-3i-aU3" firstAttribute="top" secondItem="5cz-sC-9sq" secondAttribute="bottom" constant="463" id="bkc-RH-QXw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="O49-Ul-mH6"/>
@@ -210,7 +246,7 @@
         <!--Map-->
         <scene sceneID="70L-sa-cZZ">
             <objects>
-                <viewController id="TqU-Xe-fAW" sceneMemberID="viewController">
+                <viewController id="TqU-Xe-fAW" customClass="MapViewController" customModule="DataDownloader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uuQ-J2-F9l"/>
                         <viewControllerLayoutGuide type="bottom" id="Zhg-Gi-S2w"/>
@@ -232,6 +268,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="sgk-Zv-4Wa"/>
+                    <navigationItem key="navigationItem" id="t4Q-an-Xon"/>
+                    <connections>
+                        <outlet property="mapView" destination="2Ty-2o-AwG" id="2NF-UK-wcu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GG-CK-Nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,4 +318,7 @@
             <point key="canvasLocation" x="-532" y="-1426"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IIG-ng-vll"/>
+    </inferredMetricsTieBreakers>
 </document>
