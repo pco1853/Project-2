@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Social
 
 class searchDetailVC: UITableViewController {
 
@@ -42,6 +43,53 @@ class searchDetailVC: UITableViewController {
         return 1
     }
 
+    //Sharing functionality to Facebook and Twitter
+    @IBAction func shareButtonTapped(sender: AnyObject)
+    {
+        
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        //Adding a cool blur effect
+        var darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame = self.view.bounds
+        self.view.addSubview(blurView)
+        
+        let facebook = UIAlertAction(title: "Facebook", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            var socialFB = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            
+            self.presentViewController(socialFB, animated: true, completion: nil)
+            socialFB.setInitialText("\(self.selectedEvent.getArtistName()) is playing at \(self.selectedEvent.getVenueAddress())")
+            socialFB.addImage(self.selectedEvent.getVenueImage())
+            
+            blurView.removeFromSuperview()
+            
+        })
+        
+        let twitter = UIAlertAction(title: "Twitter", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            var socialTweet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+
+            self.presentViewController(socialTweet, animated: true, completion: nil)
+            socialTweet.setInitialText("\(self.selectedEvent.getArtistName()) is playing at \(self.selectedEvent.getVenueAddress())")
+            socialTweet.addImage(self.selectedEvent.getVenueImage())
+            
+            blurView.removeFromSuperview()
+            
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            blurView.removeFromSuperview()
+        })
+        
+        optionMenu.addAction(facebook)
+        optionMenu.addAction(twitter)
+        optionMenu.addAction(cancel)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+        
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let customCell = tableView.dequeueReusableCellWithIdentifier("selectedMusicEvent", forIndexPath: indexPath) as detailViewCell
@@ -55,6 +103,12 @@ class searchDetailVC: UITableViewController {
         
     }
     
+    @IBAction func addFavoritesTapped(sender: AnyObject)
+    {
+        //favoritesArray.append(selectedEvent)
+        print("tapped")
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "detailViewToMap"
         {
@@ -63,6 +117,11 @@ class searchDetailVC: UITableViewController {
             mapView.selectedEventCoordinates = selectedEvent.getCoordinates()
             mapView.region = MKCoordinateRegionMakeWithDistance(selectedEvent.getCoordinates(), 200000, 200000)
             mapView.isZoomedInView = true
+        }
+        else if segue.identifier == "showFavorites"
+        {
+            favoritesArray.append(selectedEvent)
+            
         }
     }
 

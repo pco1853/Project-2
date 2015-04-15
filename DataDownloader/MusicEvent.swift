@@ -25,10 +25,10 @@ class MusicEvent:NSObject, MKAnnotation, NSCoding
     var eventName:String
     var eventAddress:String
     var eventImage:UIImage
-    
+    var artistName:String
     
     //initialize every event with at least a title, city, and coordinate location
-    init(name:String, lat:Float, long:Float, venueCity:String, venueName:String, venueAddress:String, venueImage:UIImage)
+    init(name:String, lat:Float, long:Float, venueCity:String, venueName:String, venueAddress:String, venueImage:UIImage, artist:String)
     {
         eventTitle = name
         latitude = lat
@@ -38,7 +38,7 @@ class MusicEvent:NSObject, MKAnnotation, NSCoding
         eventName = venueName
         eventAddress = venueAddress
         eventImage = venueImage
-    
+        artistName = artist
         title = name
         subtitle = self.city
     }
@@ -53,6 +53,7 @@ class MusicEvent:NSObject, MKAnnotation, NSCoding
         eventName = aDecoder.decodeObjectForKey("eventName") as String
         eventAddress = aDecoder.decodeObjectForKey("eventAddress") as String
         eventImage = aDecoder.decodeObjectForKey("eventImage") as UIImage
+        artistName = aDecoder.decodeObjectForKey("artistName") as String
         title = aDecoder.decodeObjectForKey("title") as? String
         subtitle = aDecoder.decodeObjectForKey("subtitle") as? String
         
@@ -89,6 +90,11 @@ class MusicEvent:NSObject, MKAnnotation, NSCoding
         return eventImage
     }
     
+    func getArtistName()->String
+    {
+        return artistName
+    }
+    
     func encodeWithCoder(aCoder: NSCoder)
     {
         aCoder.encodeObject(eventTitle, forKey: "eventTitle")
@@ -100,6 +106,7 @@ class MusicEvent:NSObject, MKAnnotation, NSCoding
         aCoder.encodeObject(eventImage, forKey: "eventImage")
         aCoder.encodeObject(title, forKey: "title")
         aCoder.encodeObject(subtitle, forKey: "subtitle")
+        aCoder.encodeObject(artistName, forKey: "artistName")
         
     }
 }

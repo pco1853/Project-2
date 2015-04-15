@@ -28,13 +28,13 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Scl-vm-X4a">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RnX-sJ-yBA">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -53,8 +53,8 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-1c-CWw">
-                                <rect key="frame" x="0.0" y="290" width="20" height="20"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-1c-CWw">
+                                <rect key="frame" x="0.0" y="266" width="600" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -63,7 +63,10 @@
                             <constraint firstAttribute="trailing" secondItem="wW0-OZ-9L2" secondAttribute="trailing" id="ItP-gx-yjU"/>
                             <constraint firstItem="wW0-OZ-9L2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZuK-tA-P3f"/>
                             <constraint firstItem="1pR-0P-9Zy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="aae-7x-J1G"/>
+                            <constraint firstItem="dfe-1c-CWw" firstAttribute="trailing" secondItem="1pR-0P-9Zy" secondAttribute="trailing" id="byD-yq-n9m"/>
+                            <constraint firstItem="dfe-1c-CWw" firstAttribute="leading" secondItem="1pR-0P-9Zy" secondAttribute="leading" id="f4F-7V-rCE"/>
                             <constraint firstItem="1pR-0P-9Zy" firstAttribute="trailing" secondItem="wW0-OZ-9L2" secondAttribute="trailing" id="gZo-yi-7gm"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="dfe-1c-CWw" secondAttribute="bottom" constant="265" id="gzR-70-vxX"/>
                             <constraint firstAttribute="bottom" secondItem="wW0-OZ-9L2" secondAttribute="bottom" id="oH2-tm-zeL"/>
                             <constraint firstItem="wW0-OZ-9L2" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="y0I-ke-Z34"/>
                         </constraints>
@@ -84,143 +87,125 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404" y="-159"/>
+            <point key="canvasLocation" x="-570" y="145"/>
         </scene>
         <!--Search DetailVC-->
         <scene sceneID="nmk-C0-8hc">
             <objects>
                 <tableViewController id="buQ-bA-VQR" customClass="searchDetailVC" customModule="DataDownloader" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="388" sectionHeaderHeight="22" sectionFooterHeight="22" id="eTu-4g-ZYM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="306" sectionHeaderHeight="22" sectionFooterHeight="22" id="eTu-4g-ZYM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectedMusicEvent" rowHeight="388" id="B1y-EP-1vN" customClass="detailViewCell" customModule="DataDownloader" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectedMusicEvent" rowHeight="306" id="B1y-EP-1vN" customClass="detailViewCell" customModule="DataDownloader" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B1y-EP-1vN" id="ZW4-It-nX4">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Concert Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkJ-n1-7dG">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Concert Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkJ-n1-7dG">
                                             <rect key="frame" x="8" y="5" width="94" height="28"/>
                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
                                             <color key="textColor" red="0.59052309782608692" green="0.59052309782608692" blue="0.59052309782608692" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oK-PV-I3U">
-                                            <rect key="frame" x="8" y="318" width="95" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oK-PV-I3U">
+                                            <rect key="frame" x="161" y="41" width="95" height="30"/>
                                             <state key="normal" title="Show on Map">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="320" width="95" height="30"/>
+                                                <rect key="frame" x="161" y="49" width="95" height="30"/>
                                             </variation>
                                             <connections>
                                                 <segue destination="TqU-Xe-fAW" kind="show" identifier="detailViewToMap" id="IIG-ng-vll"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dM-e7-PMT">
-                                            <rect key="frame" x="77" y="199" width="232" height="23"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dM-e7-PMT">
+                                            <rect key="frame" x="77" y="193" width="232" height="23"/>
                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="71" y="201" width="232" height="23"/>
+                                                <rect key="frame" x="71" y="192" width="232" height="23"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hic-w0-bWP">
-                                            <rect key="frame" x="57" y="230" width="252" height="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFO-co-hhh">
+                                            <rect key="frame" x="89" y="257" width="220" height="27"/>
                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="51" y="230" width="252" height="25"/>
+                                                <rect key="frame" x="89" y="266" width="214" height="27"/>
                                             </variation>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-3D-oQ4">
-                                            <rect key="frame" x="111" y="318" width="95" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="95" id="fBo-L6-WTU"/>
-                                            </constraints>
-                                            <state key="normal" title="Share">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                <rect key="frame" x="111" y="320" width="95" height="30"/>
-                                            </variation>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtE-8c-qb6">
-                                            <rect key="frame" x="214" y="318" width="113" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtE-8c-qb6">
+                                            <rect key="frame" x="161" y="146" width="113" height="30"/>
                                             <state key="normal" title="Add to Favorites">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="214" y="320" width="113" height="30"/>
+                                                <rect key="frame" x="161" y="154" width="113" height="30"/>
                                             </variation>
+                                            <connections>
+                                                <action selector="addFavoritesTapped:" destination="buQ-bA-VQR" eventType="touchUpInside" id="bLo-d3-Qml"/>
+                                                <segue destination="Eal-kr-6Zq" kind="show" identifier="showFavorites" id="e6D-tJ-Nj8"/>
+                                            </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2D-un-G0Y">
-                                            <rect key="frame" x="8" y="200" width="61" height="23"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="61" id="ZmF-Rs-YMx"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venue:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2D-un-G0Y">
+                                            <rect key="frame" x="8" y="193" width="61" height="23"/>
                                             <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                <rect key="frame" x="8" y="203" width="61" height="23"/>
-                                                <mask key="constraints">
-                                                    <exclude reference="ZmF-Rs-YMx"/>
-                                                </mask>
-                                            </variation>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqO-Ae-zrF">
-                                            <rect key="frame" x="8" y="230" width="40" height="25"/>
-                                            <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="233" width="40" height="25"/>
+                                                <rect key="frame" x="8" y="192" width="61" height="23"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIF-0U-cbD">
-                                            <rect key="frame" x="8" y="263" width="82" height="27"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="27" id="MXC-eb-TWH"/>
-                                                <constraint firstAttribute="width" constant="82" id="f7W-xZ-7x7"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIF-0U-cbD">
+                                            <rect key="frame" x="8" y="257" width="82" height="27"/>
                                             <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                <rect key="frame" x="8" y="261" width="82" height="27"/>
-                                                <mask key="constraints">
-                                                    <exclude reference="MXC-eb-TWH"/>
-                                                    <exclude reference="f7W-xZ-7x7"/>
-                                                </mask>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="266" width="82" height="27"/>
                                             </variation>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YqR-TA-ZMt">
-                                            <rect key="frame" x="89" y="41" width="145" height="135"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="135" id="17H-Gk-qrD"/>
-                                                <constraint firstAttribute="width" constant="145" id="Tg2-Se-tah"/>
-                                            </constraints>
-                                            <variation key="widthClass=compact" ambiguous="YES">
-                                                <rect key="frame" x="111" y="43" width="145" height="135"/>
-                                                <mask key="constraints">
-                                                    <exclude reference="17H-Gk-qrD"/>
-                                                    <exclude reference="Tg2-Se-tah"/>
-                                                </mask>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YqR-TA-ZMt">
+                                            <rect key="frame" x="8" y="41" width="145" height="135"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="49" width="145" height="135"/>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFO-co-hhh">
-                                            <rect key="frame" x="89" y="263" width="220" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hic-w0-bWP">
+                                            <rect key="frame" x="57" y="224" width="252" height="25"/>
                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="89" y="261" width="214" height="27"/>
+                                                <rect key="frame" x="51" y="228" width="252" height="25"/>
                                             </variation>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqO-Ae-zrF">
+                                            <rect key="frame" x="8" y="224" width="40" height="25"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="228" width="40" height="25"/>
+                                            </variation>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-3D-oQ4">
+                                            <rect key="frame" x="161" y="94" width="41" height="30"/>
+                                            <state key="normal" title="Share">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="161" y="102" width="42" height="30"/>
+                                            </variation>
+                                            <connections>
+                                                <action selector="shareButtonTapped:" destination="buQ-bA-VQR" eventType="touchUpInside" id="H6H-36-65h"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -239,42 +224,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2V3-tW-iJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-408" y="608"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="cWm-ao-RGO">
-            <objects>
-                <viewController id="InM-vk-PRb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hWP-zb-DDc"/>
-                        <viewControllerLayoutGuide type="bottom" id="cDG-hp-YbN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9kB-ke-COk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites coming soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-ky-Ehf">
-                                <rect key="frame" x="176" y="50" width="249" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="249" id="0gF-gd-yOS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="V5q-ky-Ehf" firstAttribute="top" secondItem="hWP-zb-DDc" secondAttribute="bottom" constant="30" id="521-Lo-P9K"/>
-                            <constraint firstItem="cDG-hp-YbN" firstAttribute="top" secondItem="V5q-ky-Ehf" secondAttribute="bottom" constant="462" id="59u-m9-Jcv"/>
-                            <constraint firstItem="V5q-ky-Ehf" firstAttribute="centerX" secondItem="9kB-ke-COk" secondAttribute="centerX" id="hqR-Nq-nqR"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="4Uw-Cs-wSX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RIh-26-TXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2191" y="-810"/>
+            <point key="canvasLocation" x="224" y="151"/>
         </scene>
         <!--About-->
         <scene sceneID="sm8-gg-EGO">
@@ -294,7 +244,7 @@
                                     <constraint firstAttribute="width" constant="342" id="nst-Cy-Wj8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -309,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2eX-WR-PJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208" y="-60"/>
+            <point key="canvasLocation" x="280" y="-1410"/>
         </scene>
         <!--Map-->
         <scene sceneID="70L-sa-cZZ">
@@ -323,7 +273,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Ty-2o-AwG">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ty-2o-AwG">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                         </subviews>
@@ -343,7 +293,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GG-CK-Nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1379" y="-1478"/>
+            <point key="canvasLocation" x="218" y="-595"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="g8Z-kL-c6f">
+            <objects>
+                <tableViewController id="Eal-kr-6Zq" customClass="favoritesViewController" customModule="DataDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3oM-1u-mUv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesCell" textLabel="9mr-e2-njx" detailTextLabel="Csn-bq-Uf5" style="IBUITableViewCellStyleSubtitle" id="h4B-SU-VPv" customClass="favoritesViewCellTableViewCell" customModule="DataDownloader" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h4B-SU-VPv" id="Gl4-45-H85">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9mr-e2-njx">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Csn-bq-Uf5">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Eal-kr-6Zq" id="iMF-M1-NRk"/>
+                            <outlet property="delegate" destination="Eal-kr-6Zq" id="Ufa-ML-xtB"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="1Az-D6-UQJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8O2-Pk-ZZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1314" y="-595"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eKR-Uc-pB1">
@@ -362,7 +353,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63o-V0-GCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-408" y="-159"/>
+            <point key="canvasLocation" x="-578" y="-595"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1WK-e8-KR1">
@@ -377,7 +368,7 @@
                     <connections>
                         <segue destination="WTF-3w-ccl" kind="relationship" relationship="viewControllers" id="J1f-OT-BEg"/>
                         <segue destination="TqU-Xe-fAW" kind="relationship" relationship="viewControllers" id="hLR-8j-irT"/>
-                        <segue destination="InM-vk-PRb" kind="relationship" relationship="viewControllers" id="geo-it-bhs"/>
+                        <segue destination="Eal-kr-6Zq" kind="relationship" relationship="viewControllers" id="q49-js-0xp"/>
                         <segue destination="wpO-0n-APD" kind="relationship" relationship="viewControllers" id="YXR-ae-Qzw"/>
                     </connections>
                 </tabBarController>
@@ -388,5 +379,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="IIG-ng-vll"/>
+        <segue reference="e6D-tJ-Nj8"/>
     </inferredMetricsTieBreakers>
 </document>

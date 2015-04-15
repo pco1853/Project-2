@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else
         {
-            
+            musicEvents = [MusicEvent]()
         }
        
         

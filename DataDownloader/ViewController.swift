@@ -14,8 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var testArray = [MusicEvent]()
-    
     let myLastFMURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getevents&format=json&api_key="
     let myLastFmApiKey = "5657eb0b60719315b09d11096a3eff30"
     var emptySearchResult:Bool!
@@ -113,7 +111,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         musicEvents.removeAll(keepCapacity: false)
         self.tableView.reloadData()
         
-        self.searchIndicator.center = CGPointMake(self.view.center.x, self.view.center.y)
         self.searchIndicator.hidden = false
         self.searchIndicator.startAnimating()
         
@@ -173,9 +170,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     var mediumImage = images[2]["#text"].string!
                     var eventImage:UIImage?
                     let url = NSURL(string: mediumImage)
+                    //If last FM does not provide us with an image then use a blank image photo
                     if let data = NSData(contentsOfURL: url!)
                     {
                         eventImage = UIImage(data: data)
+                    }
+                    else
+                    {
+                        eventImage = UIImage(named: "noContent.png")
                     }
                     
                     
@@ -184,7 +186,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     var eventLong:Float = NSString(string: (e["venue"]["location"]["geo:point"]["geo:long"].stringValue)).floatValue
                     
                     //add each event to our table
-                    var event = MusicEvent(name:eventTitle, lat: eventLat, long: eventLong, venueCity: eventCity, venueName: eventVenue, venueAddress: eventAddress, venueImage: eventImage!)
+                    var event = MusicEvent(name:eventTitle, lat: eventLat, long: eventLong, venueCity: eventCity, venueName: eventVenue, venueAddress: eventAddress, venueImage: eventImage!, artist:searchString)
                     musicEvents.append(event)
 
                 }
@@ -197,7 +199,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     if(musicEvents.count < 2)
                     {
                         musicEvents.removeAll(keepCapacity: false)
-                        var event = MusicEvent(name: "No results found", lat: 0.0, long: 0.0, venueCity: "", venueName: "", venueAddress: "", venueImage: UIImage())
+                        var event = MusicEvent(name: "No results found", lat: 0.0, long: 0.0, venueCity: "", venueName: "", venueAddress: "", venueImage: UIImage(), artist:"No artist")
                         musicEvents.append(event)
                         
                         self.emptySearchResult = true

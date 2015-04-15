@@ -8,10 +8,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    var locationManager: CLLocationManager!
+    
     var annotationsArray:Array<AnyObject>?
     var selectedEventCoordinates:CLLocationCoordinate2D?
     var region: MKCoordinateRegion?
@@ -19,8 +22,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         mapView.delegate = self
+        mapView.showsUserLocation = true
+        
         getAnnotations()
     }
     
@@ -45,6 +57,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //updating our current location
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+
+    }
+    
     //Helper function to determine which annotations to display on the mapview
     func getAnnotations()
     {
@@ -60,6 +77,33 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
     }
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView!
+    {
+        if annotation is MKUserLocation
+        {
+            return nil
+        }
+        
+        let reuseID = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseID) as? MKPinAnnotationView
+        if pinView == nil
+        {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            pinView!.canShowCallout = true
+            pinView!.animatesDrop = true
+            pinView!.pinColor = .Green
+        }
+        else
+        {
+            pinView!.annotation = annotation
+        }
+        
+        return pinView
+        
+    }
+    
 
     //view
 
